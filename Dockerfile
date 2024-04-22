@@ -16,8 +16,8 @@ RUN npm install --only=production
 # Copy local code to the container image.
 COPY . .
 
-# Build the Rendertron project
-RUN npm run build
+# Expose the port Rendertron runs on
+EXPOSE 3000
 
 # Run the web service on container startup.
-CMD [ "npm", "start" ]
+CMD [ "npm", "run", "start" ]
